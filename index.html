@@ -1,0 +1,3070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amanda O'Connell - Professional Book Marketing Expert helping authors transform their books into bestsellers through strategic, data-driven marketing campaigns.">
+    <meta name="keywords" content="book marketing, author marketing, book launch, Amazon optimization, email marketing for authors">
+    <meta name="author" content="Amanda O'Connell">
+    <title>Amanda O'Connell | Book Marketing Expert & Specialist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES (VARIABLES)
+        ============================================ */
+        :root {
+            /* Primary Colors */
+            --gold: #C9A227;
+            --gold-light: #D4AF37;
+            --gold-dark: #A68A1F;
+            --gold-muted: rgba(201, 162, 39, 0.15);
+            --gold-gradient: linear-gradient(135deg, #C9A227 0%, #D4AF37 50%, #E8C547 100%);
+            
+            /* Neutral Colors */
+            --black: #0A0A0A;
+            --charcoal: #1A1A1A;
+            --dark-gray: #2D2D2D;
+            --medium-gray: #4A4A4A;
+            --light-gray: #8A8A8A;
+            --off-white: #F5F3EF;
+            --cream: #FAF8F5;
+            --white: #FFFFFF;
+            
+            /* Typography */
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-elegant: 'Cormorant Garamond', Georgia, serif;
+            
+            /* Spacing */
+            --section-padding: 120px;
+            --container-width: 1200px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.4s ease;
+            --transition-slow: 0.6s ease;
+            --transition-elegant: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Shadows */
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.2);
+            --shadow-gold: 0 8px 30px rgba(201, 162, 39, 0.3);
+        }
+
+        /* ============================================
+           PRELOADER
+        ============================================ */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--charcoal);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-logo {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .preloader-line {
+            width: 200px;
+            height: 2px;
+            background: var(--dark-gray);
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .preloader-line::after {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gold-gradient);
+            animation: preloaderLine 1.5s ease-in-out infinite;
+        }
+
+        @keyframes preloaderLine {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           RESET & BASE STYLES
+        ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+        ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--charcoal);
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--medium-gray);
+        }
+
+        .text-gold { color: var(--gold); }
+        .text-elegant {
+            font-family: var(--font-elegant);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* ============================================
+           LAYOUT & CONTAINERS
+        ============================================ */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: var(--section-padding) 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--charcoal);
+            color: var(--off-white);
+        }
+
+        .section-dark h1,
+        .section-dark h2,
+        .section-dark h3,
+        .section-dark h4 {
+            color: var(--white);
+        }
+
+        .section-dark p {
+            color: var(--light-gray);
+        }
+
+        /* ============================================
+           DECORATIVE ELEMENTS
+        ============================================ */
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background: var(--gold-gradient);
+            margin: 30px auto;
+            position: relative;
+        }
+
+        .gold-divider::before {
+            content: '◆';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--gold);
+            font-size: 0.6rem;
+            background: inherit;
+            padding: 0 10px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .subtitle {
+            font-family: var(--font-elegant);
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .flourish {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+        ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+
+        /* ============================================
+           BUTTONS
+        ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: 0;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gold-gradient);
+            color: var(--charcoal);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition-slow);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(201, 162, 39, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-3px);
+        }
+
+        .btn-dark {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .btn-dark:hover {
+            background: var(--black);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* ============================================
+           NAVIGATION
+        ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 0;
+            transition: var(--transition-medium);
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--off-white);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition-medium);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            padding: 12px 28px !important;
+            background: var(--gold) !important;
+            color: var(--charcoal) !important;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Navigation */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            transition: var(--transition-medium);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            right: -10%;
+            bottom: -10%;
+            width: 60%;
+            height: 120%;
+            opacity: 0.03;
+            filter: grayscale(100%);
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            padding-right: 40px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--gold-muted);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.7s forwards;
+        }
+
+        .hero h1 .highlight {
+            color: var(--gold);
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(201, 162, 39, 0.2);
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-elegant);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--light-gray);
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.9s forwards;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1.1s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1.3s forwards;
+        }
+
+        .hero-email {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1.5s forwards;
+        }
+
+        .hero-email i {
+            color: var(--gold);
+        }
+
+        .hero-email a {
+            color: var(--gold);
+            border-bottom: 1px solid transparent;
+        }
+
+        .hero-email a:hover {
+            border-bottom-color: var(--gold);
+        }
+
+        .hero-image {
+            position: relative;
+            opacity: 0;
+            animation: fadeInRight 1s ease 1s forwards;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 70%;
+            border: 2px solid var(--gold);
+            z-index: -1;
+            transition: var(--transition-medium);
+        }
+
+        .hero-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70%;
+            height: 70%;
+            background: var(--gold-muted);
+            z-index: -1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            filter: grayscale(20%);
+            transition: var(--transition-medium);
+        }
+
+        .hero-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1.7s forwards;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 8px;
+        }
+
+        /* ============================================
+           TRUST BADGES
+        ============================================ */
+        .trust-section {
+            background: var(--black);
+            padding: 40px 0;
+            border-top: 1px solid rgba(201, 162, 39, 0.2);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .trust-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .trust-item i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* ============================================
+           CHALLENGES SECTION
+        ============================================ */
+        .challenges {
+            background: var(--cream);
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .challenge-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 0;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--gold-gradient);
+            transition: var(--transition-medium);
+        }
+
+        .challenge-card:hover::before {
+            height: 100%;
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .challenge-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-muted);
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            transition: var(--transition-medium);
+        }
+
+        .challenge-card:hover .challenge-icon {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .challenge-card h4 {
+            margin-bottom: 15px;
+        }
+
+        .challenge-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           BENEFITS SECTION
+        ============================================ */
+        .benefits {
+            background: var(--charcoal);
+            position: relative;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Amanda Oconnell.jpg') center center no-repeat;
+            background-size: cover;
+            opacity: 0.03;
+            filter: grayscale(100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 25px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-medium);
+        }
+
+        .benefit-item:hover {
+            background: rgba(201, 162, 39, 0.05);
+            border-color: rgba(201, 162, 39, 0.2);
+            transform: translateX(10px);
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold);
+            color: var(--charcoal);
+            font-size: 1.2rem;
+        }
+
+        .benefit-content h4 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .benefit-content p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+        ============================================ */
+        .about {
+            background: var(--cream);
+        }
+
+        .about .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-image-main img {
+            width: 100%;
+            filter: grayscale(20%);
+            transition: var(--transition-medium);
+        }
+
+        .about-image-main:hover img {
+            filter: grayscale(0%);
+        }
+
+        .about-image-frame {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gold);
+            z-index: 1;
+        }
+
+        .about-image-accent {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
+            background: var(--gold-muted);
+            z-index: 0;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 30px;
+            right: -20px;
+            background: var(--charcoal);
+            padding: 25px 30px;
+            z-index: 3;
+            text-align: center;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .about-badge-number {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .about-badge-text {
+            font-size: 0.75rem;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 5px;
+        }
+
+        .about-content .subtitle {
+            font-family: var(--font-elegant);
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .about-content h2 {
+            margin-bottom: 30px;
+        }
+
+        .about-content .lead {
+            font-family: var(--font-elegant);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 35px;
+            margin-bottom: 40px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+        }
+
+        .about-feature i {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        /* ============================================
+           SERVICES SECTION
+        ============================================ */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--cream);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-medium);
+            border: 1px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition-medium);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .service-number {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold-muted);
+            line-height: 1;
+            margin-bottom: 20px;
+            transition: var(--transition-medium);
+        }
+
+        .service-card:hover .service-number {
+            color: var(--gold);
+        }
+
+        .service-card h4 {
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            margin-bottom: 30px;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin-bottom: 10px;
+        }
+
+        .service-features li i {
+            color: var(--gold);
+            margin-top: 4px;
+            font-size: 0.7rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .service-link i {
+            transition: var(--transition-fast);
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+        ============================================ */
+        .testimonials {
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '"';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-serif);
+            font-size: 40rem;
+            color: rgba(201, 162, 39, 0.03);
+            pointer-events: none;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 50px 40px;
+            transition: var(--transition-medium);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition-medium);
+            z-index: -1;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-elegant);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--off-white);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-author-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: var(--transition-medium);
+        }
+
+        .testimonial-author-image:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .testimonial-author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author-info h5 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-author-info span {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .testimonial-author-contact {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .testimonial-author-contact a {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .testimonial-author-contact a:hover {
+            color: var(--gold);
+        }
+
+        .testimonial-author-contact i {
+            font-size: 0.9rem;
+        }
+
+        .testimonial-book {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .testimonial-book-cover {
+            width: 80px;
+            height: 120px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            cursor: pointer;
+            transition: var(--transition-medium);
+            flex-shrink: 0;
+        }
+
+        .testimonial-book-cover:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .testimonial-book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-book-info {
+            flex: 1;
+        }
+
+        .testimonial-book-info p {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            margin-bottom: 10px;
+        }
+
+        .amazon-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--transition-fast);
+        }
+
+        .amazon-link:hover {
+            color: var(--gold-light);
+        }
+
+        .amazon-link img {
+            width: 60px;
+            height: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+            transition: var(--transition-fast);
+        }
+
+        .amazon-link:hover img {
+            opacity: 1;
+        }
+
+        /* ============================================
+           PROCESS SECTION
+        ============================================ */
+        .process {
+            background: var(--cream);
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--gold-muted);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-step:nth-child(odd) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .process-step:nth-child(odd) .process-content {
+            padding-right: 60px;
+            padding-left: 0;
+        }
+
+        .process-step:nth-child(even) .process-content {
+            padding-left: 60px;
+        }
+
+        .process-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold);
+            color: var(--charcoal);
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .process-content {
+            width: calc(50% - 30px);
+            background: var(--white);
+            padding: 35px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-medium);
+        }
+
+        .process-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .process-content h4 {
+            margin-bottom: 12px;
+        }
+
+        .process-content p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           CTA SECTION
+        ============================================ */
+        .cta-section {
+            background: var(--gold);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Amanda Oconnell.jpg') center center no-repeat;
+            background-size: cover;
+            opacity: 0.05;
+            filter: grayscale(100%);
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            color: var(--charcoal);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+        ============================================ */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact .container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+        }
+
+        .contact-info {
+            padding-right: 40px;
+        }
+
+        .contact-info .subtitle {
+            font-family: var(--font-elegant);
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 25px;
+        }
+
+        .contact-info > p {
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold-muted);
+            color: var(--gold);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-content h5 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-item-content p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .contact-item-content a {
+            color: var(--gold);
+        }
+
+        .contact-item-content a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-image {
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .contact-image img {
+            width: 200px;
+            filter: grayscale(30%);
+            border: 4px solid var(--gold);
+        }
+
+        .contact-form-wrapper {
+            background: var(--cream);
+            padding: 50px;
+        }
+
+        .contact-form-wrapper h3 {
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group label span {
+            color: var(--gold);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            color: var(--charcoal);
+            background: var(--white);
+            border: 2px solid transparent;
+            transition: var(--transition-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-control::placeholder {
+            color: var(--light-gray);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23C9A227' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-item input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--gold);
+            cursor: pointer;
+        }
+
+        .checkbox-item span {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .form-submit {
+            margin-top: 30px;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .form-note {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            text-align: center;
+        }
+
+        .form-note i {
+            color: var(--gold);
+            margin-right: 5px;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background: var(--black);
+            padding: 80px 0 40px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: var(--light-gray);
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light-gray);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .footer-social a:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+        }
+
+        .footer-column h5 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 25px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 0.95rem;
+            color: var(--light-gray);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-item i {
+            color: var(--gold);
+            margin-top: 4px;
+        }
+
+        .footer-contact-item p {
+            font-size: 0.95rem;
+            color: var(--light-gray);
+            margin-bottom: 0;
+        }
+
+        .footer-contact-item a {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 40px;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-legal a {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+        }
+
+        .footer-legal a:hover {
+            color: var(--gold);
+        }
+
+        /* ============================================
+           BACK TO TOP BUTTON
+        ============================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold);
+            color: var(--charcoal);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-medium);
+            z-index: 999;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gold-dark);
+            transform: translateY(-5px);
+        }
+
+        /* ============================================
+           RESPONSIVE STYLES
+        ============================================ */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero .container {
+                gap: 60px;
+            }
+            
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --section-padding: 80px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: var(--charcoal);
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition-medium);
+                box-shadow: var(--shadow-heavy);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .hero-email {
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .challenges-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about .container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .about-image {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact .container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+            }
+            
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .challenges-grid,
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-timeline::before {
+                left: 30px;
+            }
+            
+            .process-step,
+            .process-step:nth-child(odd) {
+                flex-direction: column;
+                text-align: left;
+                padding-left: 80px;
+            }
+            
+            .process-number {
+                left: 0;
+                transform: none;
+            }
+            
+            .process-step:nth-child(odd) .process-content,
+            .process-step:nth-child(even) .process-content {
+                width: 100%;
+                padding: 25px;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .btn {
+                padding: 15px 30px;
+                font-size: 0.85rem;
+            }
+            
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 10px 18px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .trust-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .testimonial-card {
+                padding: 30px 25px;
+            }
+            
+            .testimonial-book {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-form-wrapper {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ============================================
+           CUSTOM SCROLLBAR
+        ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-dark);
+        }
+
+        /* ============================================
+           AMAZON SVG LOGO
+        ============================================ */
+        .amazon-svg {
+            width: 70px;
+            height: auto;
+        }
+
+        .amazon-svg path {
+            fill: var(--gold);
+            transition: var(--transition-fast);
+        }
+
+        .amazon-link:hover .amazon-svg path {
+            fill: var(--gold-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader">
+        <div class="preloader-logo">Amanda O'Connell</div>
+        <div class="preloader-line"></div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Amanda <span>O'Connell</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Results</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <img src="Amanda Oconnell.jpg" alt="" class="hero-bg-image" aria-hidden="true">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    Book Marketing Expert & Specialist
+                </div>
+                <h1>Transform Your Book Into a <span class="highlight">Revenue-Generating</span> Asset</h1>
+                <p class="hero-subtitle">Strategic, data-driven marketing that turns overlooked books into bestsellers</p>
+                <p class="hero-text">
+                    You've poured your heart into writing your book. Now it's time to ensure it reaches 
+                    the readers who need it most. I specialize in creating customized, results-driven 
+                    marketing campaigns that build devoted readerships and sustainable author careers.
+                </p>
+                <div class="hero-cta">
+                    <a href="mailto:amandaoconnell825@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Email Me Your Book Details
+                    </a>
+                    <a href="#services" class="btn btn-outline">
+                        <i class="fas fa-arrow-right"></i>
+                        Explore Services
+                    </a>
+                </div>
+                <div class="hero-email">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Direct Email: <a href="mailto:amandaoconnell825@gmail.com">amandaoconnell825@gmail.com</a></span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="Amanda Oconnell.jpg" alt="Amanda O'Connell - Book Marketing Expert">
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">25+</div>
+                        <div class="hero-stat-label">Authors Helped</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">100%</div>
+                        <div class="hero-stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">24/7</div>
+                        <div class="hero-stat-label">Email Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRUST BADGES ==================== -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Confidential</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Fully Documented Process</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email-First Communication</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Data-Driven Strategies</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-handshake"></i>
+                    <span>Personalized Approach</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CHALLENGES SECTION ==================== -->
+    <section class="section challenges" id="challenges">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">The Struggle Is Real</span>
+                <h2>Challenges Authors Face Today</h2>
+                <div class="gold-divider"></div>
+                <p>With over 4 million books published annually, getting noticed requires more than just great writing.</p>
+            </div>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card reveal stagger-1">
+                    <div class="challenge-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h4>Invisible on Amazon</h4>
+                    <p>Your book is buried under thousands of competitors. Without proper optimization and strategic keyword placement, potential readers will never discover your work.</p>
+                </div>
+                
+                <div class="challenge-card reveal stagger-2">
+                    <div class="challenge-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Social Media Overwhelm</h4>
+                    <p>You post regularly but get minimal engagement. Every platform has different rules, and you're unsure what content actually converts readers.</p>
+                </div>
+                
+                <div class="challenge-card reveal stagger-3">
+                    <div class="challenge-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h4>Ads Drain Your Budget</h4>
+                    <p>You've tried running ads, but they either don't convert or eat up your budget with minimal return. Without proper targeting, ad spend becomes a money pit.</p>
+                </div>
+                
+                <div class="challenge-card reveal stagger-4">
+                    <div class="challenge-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>No Time for Marketing</h4>
+                    <p>You're a writer, not a marketer. Between writing your next book and personal commitments, consistent marketing feels impossible.</p>
+                </div>
+                
+                <div class="challenge-card reveal stagger-5">
+                    <div class="challenge-icon">
+                        <i class="fas fa-envelope-open"></i>
+                    </div>
+                    <h4>Email List Not Growing</h4>
+                    <p>You know you should be building an email list, but you don't know how to attract subscribers or what to send them.</p>
+                </div>
+                
+                <div class="challenge-card reveal stagger-6">
+                    <div class="challenge-icon">
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <h4>Reviews Are Sparse</h4>
+                    <p>Despite sales, you're struggling to generate reviews. Without social proof, new readers hesitate to take a chance on your book.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BENEFITS SECTION ==================== -->
+    <section class="section section-dark benefits" id="benefits">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">The Transformation</span>
+                <h2>What Professional Marketing Delivers</h2>
+                <div class="gold-divider"></div>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item reveal-left stagger-1">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Targeted Visibility</h4>
+                        <p>Your book appears exactly where your ideal readers are looking. Through strategic keyword optimization and category selection, readers actively searching for books like yours discover your work organically.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item reveal-right stagger-2">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Consistent Sales Growth</h4>
+                        <p>Instead of the typical launch spike followed by a cliff-drop, professional marketing creates sustained momentum. Your book maintains visibility and continues attracting new readers long after release day.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item reveal-left stagger-3">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Automated Systems</h4>
+                        <p>Wake up to new sales, email subscribers, and reader engagement without lifting a finger. Properly configured marketing automation handles repetitive work while you focus on writing.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item reveal-right stagger-4">
+                    <div class="benefit-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Authority & Credibility</h4>
+                        <p>Strategic marketing builds your author brand. Position yourself as an authority in your genre or topic, translating into speaking opportunities, media features, and loyal fans.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item reveal-left stagger-5">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Maximum ROI</h4>
+                        <p>Every marketing dollar is tracked, tested, and optimized. We eliminate wasteful spending on tactics that don't convert and double down on channels that deliver measurable results.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item reveal-right stagger-6">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Long-Term Career Growth</h4>
+                        <p>Each book becomes a foundation for the next. The email list you build, the marketing systems you establish compound with each release. This is how you build a sustainable author career.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-image reveal-left">
+                <div class="about-image-frame"></div>
+                <div class="about-image-main">
+                    <img src="Amanda Oconnell.jpg" alt="Amanda O'Connell - Book Marketing Specialist">
+                </div>
+                <div class="about-image-accent"></div>
+                <div class="about-badge">
+                    <div class="about-badge-number">100%</div>
+                    <div class="about-badge-text">Dedicated to Authors</div>
+                </div>
+            </div>
+            
+            <div class="about-content reveal-right">
+                <span class="subtitle">About Amanda</span>
+                <h2>Expertise That Delivers Measurable Results</h2>
+                <p class="lead">
+                    "I believe every great book deserves a great marketing strategy. My mission is to help authors 
+                    reach readers who will love their work."
+                </p>
+                <p>
+                    Book marketing isn't guesswork. It's a specialized skill that combines psychology, data analysis, 
+                    platform expertise, and strategic planning. I've worked with authors across multiple genres, 
+                    helping them achieve results that transform their author careers.
+                </p>
+                <p>
+                    What sets my approach apart is complete customization. Every book is unique. Your target audience, 
+                    competitive landscape, budget, timeline, and goals are different from every other author. That's why 
+                    I never use one-size-fits-all templates or generic playbooks.
+                </p>
+                
+                <div class="about-features">
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Customized Strategies</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Data-Driven Decisions</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Platform Expertise</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Email-First Communication</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Complete Documentation</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Long-Term Focus</span>
+                    </div>
+                </div>
+                
+                <a href="mailto:amandaoconnell825@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Let's Discuss Your Book
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">What I Offer</span>
+                <h2>Professional Marketing Services</h2>
+                <div class="gold-divider"></div>
+                <p>Comprehensive marketing solutions tailored to your unique goals and resources.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card reveal stagger-1">
+                    <div class="service-number">01</div>
+                    <h4>Book Launch Campaigns</h4>
+                    <p>Strategic campaigns spanning weeks before and after publication for maximum visibility and momentum.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-circle"></i> Pre-launch buzz building</li>
+                        <li><i class="fas fa-circle"></i> ARC team management</li>
+                        <li><i class="fas fa-circle"></i> Launch week coordination</li>
+                        <li><i class="fas fa-circle"></i> Post-launch optimization</li>
+                    </ul>
+                    <a href="mailto:amandaoconnell825@gmail.com?subject=Book Launch Campaign Inquiry" class="service-link">
+                        Get Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal stagger-2">
+                    <div class="service-number">02</div>
+                    <h4>Amazon Optimization</h4>
+                    <p>Ensure your book is discovered and converting at the highest possible rate on Amazon.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-circle"></i> Keyword research & optimization</li>
+                        <li><i class="fas fa-circle"></i> Category strategy</li>
+                        <li><i class="fas fa-circle"></i> A+ Content creation</li>
+                        <li><i class="fas fa-circle"></i> Amazon Ads management</li>
+                    </ul>
+                    <a href="mailto:amandaoconnell825@gmail.com?subject=Amazon Optimization Inquiry" class="service-link">
+                        Get Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal stagger-3">
+                    <div class="service-number">03</div>
+                    <h4>Email Marketing Systems</h4>
+                    <p>Build your most valuable author asset with complete email marketing infrastructure.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-circle"></i> Lead magnet development</li>
+                        <li><i class="fas fa-circle"></i> Welcome sequences</li>
+                        <li><i class="fas fa-circle"></i> Launch campaigns</li>
+                        <li><i class="fas fa-circle"></i> List growth strategies</li>
+                    </ul>
+                    <a href="mailto:amandaoconnell825@gmail.com?subject=Email Marketing Inquiry" class="service-link">
+                        Get Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal stagger-4">
+                    <div class="service-number">04</div>
+                    <h4>Social Media Strategy</h4>
+                    <p>Strategic, focused approach that builds genuine audience connection efficiently.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-circle"></i> Platform optimization</li>
+                        <li><i class="fas fa-circle"></i> Content calendars</li>
+                        <li><i class="fas fa-circle"></i> BookTok/Bookstagram</li>
+                        <li><i class="fas fa-circle"></i> Community building</li>
+                    </ul>
+                    <a href="mailto:amandaoconnell825@gmail.com?subject=Social Media Strategy Inquiry" class="service-link">
+                        Get Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal stagger-5">
+                    <div class="service-number">05</div>
+                    <h4>Advertising Management</h4>
+                    <p>Data-driven campaign management ensuring every dollar generates measurable return.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-circle"></i> Amazon Ads</li>
+                        <li><i class="fas fa-circle"></i> Facebook/Instagram Ads</li>
+                        <li><i class="fas fa-circle"></i> BookBub Ads</li>
+                        <li><i class="fas fa-circle"></i> Performance optimization</li>
+                    </ul>
+                    <a href="mailto:amandaoconnell825@gmail.com?subject=Advertising Management Inquiry" class="service-link">
+                        Get Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card reveal stagger-6">
+                    <div class="service-number">06</div>
+                    <h4>Full-Service Management</h4>
+                    <p>Complete hands-off solution handling every aspect of your book marketing.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-circle"></i> All services included</li>
+                        <li><i class="fas fa-circle"></i> Multi-channel coordination</li>
+                        <li><i class="fas fa-circle"></i> Weekly reporting</li>
+                        <li><i class="fas fa-circle"></i> Strategic oversight</li>
+                    </ul>
+                    <a href="mailto:amandaoconnell825@gmail.com?subject=Full-Service Management Inquiry" class="service-link">
+                        Get Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="section section-dark testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Success Stories</span>
+                <h2>Authors I've Worked With</h2>
+                <div class="gold-divider"></div>
+                <p>Real authors achieving real results through strategic book marketing.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1: Emily Winfield Martin -->
+                <div class="testimonial-card reveal stagger-1">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Working with Amanda transformed my book's visibility. Her strategic approach to marketing 
+                        helped me reach readers I never thought possible. The results speak for themselves.
+                    </p>
+                    <div class="testimonial-author">
+                        <a href="https://www.amazon.com/s?k=Emily+Winfield+Martin" target="_blank" rel="noopener noreferrer" class="testimonial-author-image" title="View on Amazon">
+                            <img src="Emily winfied.webp" alt="Emily Winfield Martin">
+                        </a>
+                        <div class="testimonial-author-info">
+                            <h5>Emily Winfield Martin</h5>
+                            <span>Published Author</span>
+                            <div class="testimonial-author-contact">
+                                <a href="https://tiktok.com/@authoremilywinfield" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-tiktok"></i> TikTok
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-book">
+                        <a href="https://www.amazon.com/s?k=Emily+Winfield+Martin" target="_blank" rel="noopener noreferrer" class="testimonial-book-cover" title="View on Amazon">
+                            <img src="Emily winfied book.jpg" alt="Emily Winfield Martin's Book">
+                        </a>
+                        <div class="testimonial-book-info">
+                            <p>Click to view book</p>
+                            <a href="https://www.amazon.com/s?k=Emily+Winfield+Martin" target="_blank" rel="noopener noreferrer" class="amazon-link">
+                                <svg class="amazon-svg" viewBox="0 0 603 182" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M374.006 142.184c-35.56 26.213-87.135 40.157-131.555 40.157-62.281 0-118.389-23.016-160.794-61.319-3.333-3.015-.345-7.127 3.65-4.781 45.794 26.648 102.428 42.7 160.9 42.7 39.45 0 82.844-8.166 122.747-25.08 6.023-2.572 11.07 3.953 5.052 8.323z"/>
+                                    <path d="M388.465 125.647c-4.541-5.816-30.063-2.756-41.521-1.387-3.488.418-4.022-2.617-.878-4.813 20.321-14.285 53.644-10.16 57.526-5.373 3.878 4.813-.998 38.198-20.109 54.131-2.935 2.453-5.732 1.149-4.428-2.098 4.298-10.737 13.952-34.639 9.41-40.46z"/>
+                                    <path d="M348.011 21.476V6.628c0-2.254 1.71-3.757 3.757-3.757h66.499c2.133 0 3.843 1.545 3.843 3.757v12.695c-.021 2.133-1.816 4.922-4.996 9.275l-34.457 49.234c12.8-.313 26.319 1.596 37.925 8.158 2.617 1.482 3.329 3.653 3.528 5.798v15.847c0 2.175-2.404 4.724-4.922 3.403-20.56-10.78-47.886-11.952-70.617.125-2.32 1.255-4.746-1.264-4.746-3.439v-15.049c0-2.435.021-6.589 2.477-10.284l39.929-57.287h-34.771c-2.133 0-3.843-1.524-3.843-3.736l-.606.633zM124.832 105.442h-20.205c-1.93-.145-3.466-1.596-3.612-3.424V6.817c0-2.07 1.733-3.715 3.904-3.715h18.84c1.962.084 3.528 1.596 3.695 3.466v13.699h.376c4.951-13.178 14.264-19.327 26.794-19.327 12.738 0 20.706 6.149 26.419 19.327 4.922-13.178 16.101-19.327 28.109-19.327 8.532 0 17.856 3.528 23.559 11.454 6.462 8.803 5.143 21.604 5.143 32.826l-.021 56.454c0 2.07-1.733 3.736-3.904 3.736h-20.163c-2.028-.145-3.632-1.754-3.632-3.736V53.757c0-4.409.376-15.414-.564-19.598-1.503-7.031-6.023-9.012-11.87-9.012-4.891 0-10.012 3.278-12.09 8.532-2.078 5.254-1.878 14.034-1.878 20.078v48.216c0 2.07-1.733 3.736-3.904 3.736h-20.163c-2.049-.145-3.632-1.754-3.632-3.736l-.021-48.216c0-11.663 1.92-28.819-12.434-28.819-14.539 0-13.974 16.739-13.974 28.819v48.216c0 2.07-1.733 3.736-3.904 3.736l.127-.027zM449.381.94c30.02 0 46.287 25.775 46.287 58.517 0 31.659-17.961 56.768-46.287 56.768-29.511 0-45.577-25.775-45.577-57.85 0-32.284 16.268-57.435 45.577-57.435zm.167 21.186c-14.935 0-15.873 20.351-15.873 33.03 0 12.696-.188 39.825 15.706 39.825 15.685 0 16.435-21.855 16.435-35.179 0-8.782-.376-19.285-3.026-27.589-2.288-7.22-6.838-10.087-13.242-10.087zM527.689 105.442h-20.1c-2.028-.145-3.653-1.754-3.653-3.736l-.021-95.005c.167-1.899 1.816-3.382 3.904-3.382h18.715c1.774.084 3.235 1.359 3.612 2.981v14.535h.376c5.665-13.22 13.597-19.535 27.546-19.535 9.138 0 18.046 3.299 23.768 12.279 5.311 8.323 5.311 22.315 5.311 32.388v56.769c-.209 1.816-1.858 3.278-3.904 3.278h-20.268c-1.899-.145-3.466-1.524-3.632-3.278V52.84c0-11.412 1.315-28.109-12.634-28.109-4.909 0-9.428 3.278-11.684 8.281-2.862 6.336-3.236 12.654-3.236 19.828v48.903c-.021 2.07-1.775 3.736-3.946 3.736l-.154-.037zM299.025 59.678c0 7.949.188 14.579-3.82 21.646-3.236 5.732-8.386 9.263-14.097 9.263-7.823 0-12.404-5.957-12.404-14.768 0-17.377 15.581-20.539 30.321-20.539v4.398zm20.539 49.65c-1.343 1.197-3.299 1.285-4.809.481-6.775-5.623-7.991-8.239-11.705-13.597-11.182 11.412-19.118 14.831-33.594 14.831-17.168 0-30.512-10.596-30.512-31.805 0-16.572 8.97-27.861 21.771-33.385 11.078-4.888 26.565-5.748 38.405-7.094v-2.645c0-4.867.376-10.619-2.494-14.831-2.477-3.778-7.239-5.331-11.454-5.331-7.781 0-14.705 3.987-16.404 12.258-.355 1.858-1.712 3.695-3.57 3.799l-19.641-2.133c-1.691-.376-3.549-1.733-3.089-4.305C247.305 5.207 266.028 0 282.726 0c8.532 0 19.682 2.266 26.398 8.72 8.532 7.949 7.72 18.545 7.72 30.104v27.233c0 8.176 3.403 11.767 6.588 16.186 1.118 1.587.355 3.507-1.315 4.725-4.181 3.507-11.621 10.033-15.706 13.682l.153-.322z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2: Ottessa Moshfegh -->
+                <div class="testimonial-card reveal stagger-2">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Amanda's data-driven approach and personalized strategy made all the difference. 
+                        Her email-first communication style kept everything organized and accountable throughout our project.
+                    </p>
+                    <div class="testimonial-author">
+                        <a href="https://www.amazon.com/s?k=Ottessa+Moshfegh" target="_blank" rel="noopener noreferrer" class="testimonial-author-image" title="View on Amazon">
+                            <img src="Ottessa.jpg" alt="Ottessa Moshfegh">
+                        </a>
+                        <div class="testimonial-author-info">
+                            <h5>Ottessa Moshfegh</h5>
+                            <span>Published Author</span>
+                            <div class="testimonial-author-contact">
+                                <a href="mailto:author.ottessa.moshfegh1@gmail.com">
+                                    <i class="fas fa-envelope"></i> Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-book">
+                        <a href="https://www.amazon.com/s?k=Ottessa+Moshfegh" target="_blank" rel="noopener noreferrer" class="testimonial-book-cover" title="View on Amazon">
+                            <img src="Ottessa Book.jpg" alt="Ottessa Moshfegh's Book">
+                        </a>
+                        <div class="testimonial-book-info">
+                            <p>Click to view book</p>
+                            <a href="https://www.amazon.com/s?k=Ottessa+Moshfegh" target="_blank" rel="noopener noreferrer" class="amazon-link">
+                                <svg class="amazon-svg" viewBox="0 0 603 182" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M374.006 142.184c-35.56 26.213-87.135 40.157-131.555 40.157-62.281 0-118.389-23.016-160.794-61.319-3.333-3.015-.345-7.127 3.65-4.781 45.794 26.648 102.428 42.7 160.9 42.7 39.45 0 82.844-8.166 122.747-25.08 6.023-2.572 11.07 3.953 5.052 8.323z"/>
+                                    <path d="M388.465 125.647c-4.541-5.816-30.063-2.756-41.521-1.387-3.488.418-4.022-2.617-.878-4.813 20.321-14.285 53.644-10.16 57.526-5.373 3.878 4.813-.998 38.198-20.109 54.131-2.935 2.453-5.732 1.149-4.428-2.098 4.298-10.737 13.952-34.639 9.41-40.46z"/>
+                                    <path d="M348.011 21.476V6.628c0-2.254 1.71-3.757 3.757-3.757h66.499c2.133 0 3.843 1.545 3.843 3.757v12.695c-.021 2.133-1.816 4.922-4.996 9.275l-34.457 49.234c12.8-.313 26.319 1.596 37.925 8.158 2.617 1.482 3.329 3.653 3.528 5.798v15.847c0 2.175-2.404 4.724-4.922 3.403-20.56-10.78-47.886-11.952-70.617.125-2.32 1.255-4.746-1.264-4.746-3.439v-15.049c0-2.435.021-6.589 2.477-10.284l39.929-57.287h-34.771c-2.133 0-3.843-1.524-3.843-3.736l-.606.633zM124.832 105.442h-20.205c-1.93-.145-3.466-1.596-3.612-3.424V6.817c0-2.07 1.733-3.715 3.904-3.715h18.84c1.962.084 3.528 1.596 3.695 3.466v13.699h.376c4.951-13.178 14.264-19.327 26.794-19.327 12.738 0 20.706 6.149 26.419 19.327 4.922-13.178 16.101-19.327 28.109-19.327 8.532 0 17.856 3.528 23.559 11.454 6.462 8.803 5.143 21.604 5.143 32.826l-.021 56.454c0 2.07-1.733 3.736-3.904 3.736h-20.163c-2.028-.145-3.632-1.754-3.632-3.736V53.757c0-4.409.376-15.414-.564-19.598-1.503-7.031-6.023-9.012-11.87-9.012-4.891 0-10.012 3.278-12.09 8.532-2.078 5.254-1.878 14.034-1.878 20.078v48.216c0 2.07-1.733 3.736-3.904 3.736h-20.163c-2.049-.145-3.632-1.754-3.632-3.736l-.021-48.216c0-11.663 1.92-28.819-12.434-28.819-14.539 0-13.974 16.739-13.974 28.819v48.216c0 2.07-1.733 3.736-3.904 3.736l.127-.027zM449.381.94c30.02 0 46.287 25.775 46.287 58.517 0 31.659-17.961 56.768-46.287 56.768-29.511 0-45.577-25.775-45.577-57.85 0-32.284 16.268-57.435 45.577-57.435zm.167 21.186c-14.935 0-15.873 20.351-15.873 33.03 0 12.696-.188 39.825 15.706 39.825 15.685 0 16.435-21.855 16.435-35.179 0-8.782-.376-19.285-3.026-27.589-2.288-7.22-6.838-10.087-13.242-10.087zM527.689 105.442h-20.1c-2.028-.145-3.653-1.754-3.653-3.736l-.021-95.005c.167-1.899 1.816-3.382 3.904-3.382h18.715c1.774.084 3.235 1.359 3.612 2.981v14.535h.376c5.665-13.22 13.597-19.535 27.546-19.535 9.138 0 18.046 3.299 23.768 12.279 5.311 8.323 5.311 22.315 5.311 32.388v56.769c-.209 1.816-1.858 3.278-3.904 3.278h-20.268c-1.899-.145-3.466-1.524-3.632-3.278V52.84c0-11.412 1.315-28.109-12.634-28.109-4.909 0-9.428 3.278-11.684 8.281-2.862 6.336-3.236 12.654-3.236 19.828v48.903c-.021 2.07-1.775 3.736-3.946 3.736l-.154-.037zM299.025 59.678c0 7.949.188 14.579-3.82 21.646-3.236 5.732-8.386 9.263-14.097 9.263-7.823 0-12.404-5.957-12.404-14.768 0-17.377 15.581-20.539 30.321-20.539v4.398zm20.539 49.65c-1.343 1.197-3.299 1.285-4.809.481-6.775-5.623-7.991-8.239-11.705-13.597-11.182 11.412-19.118 14.831-33.594 14.831-17.168 0-30.512-10.596-30.512-31.805 0-16.572 8.97-27.861 21.771-33.385 11.078-4.888 26.565-5.748 38.405-7.094v-2.645c0-4.867.376-10.619-2.494-14.831-2.477-3.778-7.239-5.331-11.454-5.331-7.781 0-14.705 3.987-16.404 12.258-.355 1.858-1.712 3.695-3.57 3.799l-19.641-2.133c-1.691-.376-3.549-1.733-3.089-4.305C247.305 5.207 266.028 0 282.726 0c8.532 0 19.682 2.266 26.398 8.72 8.532 7.949 7.72 18.545 7.72 30.104v27.233c0 8.176 3.403 11.767 6.588 16.186 1.118 1.587.355 3.507-1.315 4.725-4.181 3.507-11.621 10.033-15.706 13.682l.153-.322z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3: Rachael C. Duncan -->
+                <div class="testimonial-card reveal stagger-3">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        The strategic planning and execution Amanda provided exceeded all my expectations. 
+                        My book's performance improved dramatically, and I finally understood what professional marketing looks like.
+                    </p>
+                    <div class="testimonial-author">
+                        <a href="https://www.amazon.com/s?k=Rachael+C+Duncan" target="_blank" rel="noopener noreferrer" class="testimonial-author-image" title="View on Amazon">
+                            <img src="Rachael C. Duncan.webp" alt="Rachael C. Duncan">
+                        </a>
+                        <div class="testimonial-author-info">
+                            <h5>Rachael C. Duncan</h5>
+                            <span>Published Author</span>
+                            <div class="testimonial-author-contact">
+                                <a href="mailto:authorrachaelduncan@gmail.com">
+                                    <i class="fas fa-envelope"></i> Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-book">
+                        <a href="https://www.amazon.com/s?k=Rachael+C+Duncan" target="_blank" rel="noopener noreferrer" class="testimonial-book-cover" title="View on Amazon">
+                            <img src="Rachael C. Duncan book.webp" alt="Rachael C. Duncan's Book">
+                        </a>
+                        <div class="testimonial-book-info">
+                            <p>Click to view book</p>
+                            <a href="https://www.amazon.com/s?k=Rachael+C+Duncan" target="_blank" rel="noopener noreferrer" class="amazon-link">
+                                <svg class="amazon-svg" viewBox="0 0 603 182" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M374.006 142.184c-35.56 26.213-87.135 40.157-131.555 40.157-62.281 0-118.389-23.016-160.794-61.319-3.333-3.015-.345-7.127 3.65-4.781 45.794 26.648 102.428 42.7 160.9 42.7 39.45 0 82.844-8.166 122.747-25.08 6.023-2.572 11.07 3.953 5.052 8.323z"/>
+                                    <path d="M388.465 125.647c-4.541-5.816-30.063-2.756-41.521-1.387-3.488.418-4.022-2.617-.878-4.813 20.321-14.285 53.644-10.16 57.526-5.373 3.878 4.813-.998 38.198-20.109 54.131-2.935 2.453-5.732 1.149-4.428-2.098 4.298-10.737 13.952-34.639 9.41-40.46z"/>
+                                    <path d="M348.011 21.476V6.628c0-2.254 1.71-3.757 3.757-3.757h66.499c2.133 0 3.843 1.545 3.843 3.757v12.695c-.021 2.133-1.816 4.922-4.996 9.275l-34.457 49.234c12.8-.313 26.319 1.596 37.925 8.158 2.617 1.482 3.329 3.653 3.528 5.798v15.847c0 2.175-2.404 4.724-4.922 3.403-20.56-10.78-47.886-11.952-70.617.125-2.32 1.255-4.746-1.264-4.746-3.439v-15.049c0-2.435.021-6.589 2.477-10.284l39.929-57.287h-34.771c-2.133 0-3.843-1.524-3.843-3.736l-.606.633zM124.832 105.442h-20.205c-1.93-.145-3.466-1.596-3.612-3.424V6.817c0-2.07 1.733-3.715 3.904-3.715h18.84c1.962.084 3.528 1.596 3.695 3.466v13.699h.376c4.951-13.178 14.264-19.327 26.794-19.327 12.738 0 20.706 6.149 26.419 19.327 4.922-13.178 16.101-19.327 28.109-19.327 8.532 0 17.856 3.528 23.559 11.454 6.462 8.803 5.143 21.604 5.143 32.826l-.021 56.454c0 2.07-1.733 3.736-3.904 3.736h-20.163c-2.028-.145-3.632-1.754-3.632-3.736V53.757c0-4.409.376-15.414-.564-19.598-1.503-7.031-6.023-9.012-11.87-9.012-4.891 0-10.012 3.278-12.09 8.532-2.078 5.254-1.878 14.034-1.878 20.078v48.216c0 2.07-1.733 3.736-3.904 3.736h-20.163c-2.049-.145-3.632-1.754-3.632-3.736l-.021-48.216c0-11.663 1.92-28.819-12.434-28.819-14.539 0-13.974 16.739-13.974 28.819v48.216c0 2.07-1.733 3.736-3.904 3.736l.127-.027zM449.381.94c30.02 0 46.287 25.775 46.287 58.517 0 31.659-17.961 56.768-46.287 56.768-29.511 0-45.577-25.775-45.577-57.85 0-32.284 16.268-57.435 45.577-57.435zm.167 21.186c-14.935 0-15.873 20.351-15.873 33.03 0 12.696-.188 39.825 15.706 39.825 15.685 0 16.435-21.855 16.435-35.179 0-8.782-.376-19.285-3.026-27.589-2.288-7.22-6.838-10.087-13.242-10.087zM527.689 105.442h-20.1c-2.028-.145-3.653-1.754-3.653-3.736l-.021-95.005c.167-1.899 1.816-3.382 3.904-3.382h18.715c1.774.084 3.235 1.359 3.612 2.981v14.535h.376c5.665-13.22 13.597-19.535 27.546-19.535 9.138 0 18.046 3.299 23.768 12.279 5.311 8.323 5.311 22.315 5.311 32.388v56.769c-.209 1.816-1.858 3.278-3.904 3.278h-20.268c-1.899-.145-3.466-1.524-3.632-3.278V52.84c0-11.412 1.315-28.109-12.634-28.109-4.909 0-9.428 3.278-11.684 8.281-2.862 6.336-3.236 12.654-3.236 19.828v48.903c-.021 2.07-1.775 3.736-3.946 3.736l-.154-.037zM299.025 59.678c0 7.949.188 14.579-3.82 21.646-3.236 5.732-8.386 9.263-14.097 9.263-7.823 0-12.404-5.957-12.404-14.768 0-17.377 15.581-20.539 30.321-20.539v4.398zm20.539 49.65c-1.343 1.197-3.299 1.285-4.809.481-6.775-5.623-7.991-8.239-11.705-13.597-11.182 11.412-19.118 14.831-33.594 14.831-17.168 0-30.512-10.596-30.512-31.805 0-16.572 8.97-27.861 21.771-33.385 11.078-4.888 26.565-5.748 38.405-7.094v-2.645c0-4.867.376-10.619-2.494-14.831-2.477-3.778-7.239-5.331-11.454-5.331-7.781 0-14.705 3.987-16.404 12.258-.355 1.858-1.712 3.695-3.57 3.799l-19.641-2.133c-1.691-.376-3.549-1.733-3.089-4.305C247.305 5.207 266.028 0 282.726 0c8.532 0 19.682 2.266 26.398 8.72 8.532 7.949 7.72 18.545 7.72 30.104v27.233c0 8.176 3.403 11.767 6.588 16.186 1.118 1.587.355 3.507-1.315 4.725-4.181 3.507-11.621 10.033-15.706 13.682l.153-.322z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROCESS SECTION ==================== -->
+    <section class="section process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">How It Works</span>
+                <h2>The Path to Your Book's Success</h2>
+                <div class="gold-divider"></div>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step reveal">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h4>Initial Email Consultation</h4>
+                        <p>Email me details about your book, current situation, and goals. Within 24-48 hours, you'll receive a detailed strategic assessment with initial recommendations specific to your book.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step reveal">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h4>Strategy Development</h4>
+                        <p>I develop a comprehensive, customized marketing strategy including situation analysis, objectives, recommended tactics, implementation timeline, and success metrics.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step reveal">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h4>Implementation</h4>
+                        <p>Strategy becomes reality through meticulous execution across chosen channels. You receive regular email updates documenting progress, completed tasks, and next steps.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step reveal">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h4>Optimization & Reporting</h4>
+                        <p>Continuous monitoring and optimization ensure maximum results. Detailed performance reports provide insights, analysis, and recommendations for ongoing improvement.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step reveal">
+                    <div class="process-number">5</div>
+                    <div class="process-content">
+                        <h4>Sustained Success</h4>
+                        <p>As your book achieves its goals, we plan for sustained success and future releases, building systems that compound with each subsequent book you publish.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section">
+        <div class="container reveal">
+            <h2>Ready to Transform Your Book's Performance?</h2>
+            <p>Every successful book marketing campaign begins with a conversation. Let's start yours.</p>
+            <a href="mailto:amandaoconnell825@gmail.com" class="btn btn-dark">
+                <i class="fas fa-envelope"></i>
+                Email Me Today
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-info reveal-left">
+                <span class="subtitle">Get In Touch</span>
+                <h2>Let's Discuss Your Book's Potential</h2>
+                <p>Professional book marketing begins with understanding your unique situation, goals, and challenges. Email me your details and I'll respond with a strategic assessment within 24-48 hours.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h5>Email</h5>
+                            <p><a href="mailto:amandaoconnell825@gmail.com">amandaoconnell825@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h5>Response Time</h5>
+                            <p>24-48 business hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h5>Communication</h5>
+                            <p>Email-first for complete documentation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-image">
+                    <img src="Amanda Oconnell.jpg" alt="Amanda O'Connell">
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper reveal-right">
+                <h3>Send Your Inquiry</h3>
+                <form action="https://formspree.io/f/xwvrkgol" method="POST" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name <span>*</span></label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email <span>*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-title">Book Title</label>
+                            <input type="text" id="book-title" name="book-title" class="form-control" placeholder="Your Book Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="genre">Genre/Category</label>
+                            <input type="text" id="genre" name="genre" class="form-control" placeholder="e.g., Romance, Thriller, Self-Help">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="status">Publication Status</label>
+                            <select id="status" name="status" class="form-control">
+                                <option value="">Select status...</option>
+                                <option value="not-published">Not Yet Published</option>
+                                <option value="recently-published">Recently Published (0-3 months)</option>
+                                <option value="published-3-12">Published 3-12 months ago</option>
+                                <option value="backlist">Backlist (1+ years)</option>
+                                <option value="multiple">Multiple Books/Series</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Your Budget <span>*</span></label>
+                            <select id="budget" name="budget" class="form-control" required>
+                                <option value="">Select your budget...</option>
+                                <option value="under-500">Under $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2500">$1,000 - $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="5000-10000">$5,000 - $10,000</option>
+                                <option value="10000-plus">$10,000+</option>
+                                <option value="not-sure">Not Sure Yet</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Services Interested In</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="launch-campaign">
+                                <span>Book Launch</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="amazon">
+                                <span>Amazon Optimization</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="email-marketing">
+                                <span>Email Marketing</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="social-media">
+                                <span>Social Media</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="advertising">
+                                <span>Advertising</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services[]" value="full-service">
+                                <span>Full-Service</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell Me About Your Book & Goals <span>*</span></label>
+                        <textarea id="message" name="message" class="form-control" placeholder="What's your book about? What are your marketing challenges? What results are you hoping to achieve?" required></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send My Inquiry
+                        </button>
+                    </div>
+                    
+                    <p class="form-note">
+                        <i class="fas fa-lock"></i>
+                        Your information is confidential and will never be shared.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Amanda <span>O'Connell</span></a>
+                    <p>Helping authors transform their books into revenue-generating assets through strategic, data-driven marketing. Every strategy is customized. Every tactic is tracked. Every decision is data-driven.</p>
+                    <div class="footer-social">
+                        <a href="mailto:amandaoconnell825@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Results</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">Book Launch Campaigns</a></li>
+                        <li><a href="#services">Amazon Optimization</a></li>
+                        <li><a href="#services">Email Marketing</a></li>
+                        <li><a href="#services">Social Media Strategy</a></li>
+                        <li><a href="#services">Advertising Management</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h5>Contact</h5>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:amandaoconnell825@gmail.com">amandaoconnell825@gmail.com</a></p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Response within 24-48 hours</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-file-contract"></i>
+                        <p>All communication via email for complete documentation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Amanda O'Connell | Book Marketing Expert | All Rights Reserved
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ============================================
+        // PRELOADER
+        // ============================================
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.classList.add('loaded');
+            }, 1500);
+        });
+
+        // ============================================
+        // NAVBAR SCROLL EFFECT
+        // ============================================
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
+
+        window.addEventListener('scroll', function() {
+            // Navbar background
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Active navigation link
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ============================================
+        // MOBILE NAVIGATION
+        // ============================================
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ============================================
+        // SCROLL REVEAL ANIMATIONS
+        // ============================================
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(element => {
+            revealOnScroll.observe(element);
+        });
+
+        // ============================================
+        // SMOOTH SCROLLING
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // BACK TO TOP BUTTON
+        // ============================================
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ============================================
+        // FORM SUBMISSION HANDLING
+        // ============================================
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+                
+                // Re-enable button after form submission (Formspree handles the actual submission)
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, 2000);
+            });
+        }
+
+        // ============================================
+        // PARALLAX EFFECT FOR HERO
+        // ============================================
+        const hero = document.querySelector('.hero');
+        const heroBgImage = document.querySelector('.hero-bg-image');
+
+        window.addEventListener('scroll', function() {
+            if (heroBgImage) {
+                const scrolled = window.scrollY;
+                heroBgImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // ============================================
+        // CONSOLE BRANDING
+        // ============================================
+        console.log('%c Amanda O\'Connell ', 'background: #C9A227; color: #1A1A1A; font-size: 20px; font-weight: bold; padding: 10px 20px;');
+        console.log('%c Book Marketing Expert & Specialist ', 'background: #1A1A1A; color: #C9A227; font-size: 14px; padding: 5px 15px;');
+        console.log('%c 📧 amandaoconnell825@gmail.com ', 'color: #C9A227; font-size: 12px;');
+    </script>
+</body>
+</html>
